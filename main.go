@@ -4,9 +4,10 @@ import "fmt"
 import "net/http"
 
 func main(){
-	url := "https://api.ipify.org/?format=json"
+	url := "https://distopia.savi2w.workers.dev/go"
 
-	client := &http.Client{}
+	client := &http.Client{CheckRedirect: func(req *http.Request, via []*http.Request) error {
+		return http.ErrUseLastResponse}}
 
 	req, err := http.NewRequest("GET", url, nil)
 
@@ -25,7 +26,7 @@ func main(){
 
 	if resp.StatusCode == http.StatusFound {
         distopiaHeader := resp.Header.Get("Distopia")
-        fmt.Println("Distopia header value:", distopiaHeader)
+        fmt.Println("Distopia header value:", distopiaHeader, resp.StatusCode)
     } else {
 		fmt.Println("Status Code:", resp.StatusCode, "is not a redirect.")
 	}

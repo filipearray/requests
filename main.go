@@ -25,7 +25,7 @@ func main(){
 
 	if resp.StatusCode == http.StatusFound {
         distopiaHeader := resp.Header.Get("Distopia")
-        fmt.Println("Valor do header Distopia:", distopiaHeader)
+        fmt.Println("Distopia header value:", distopiaHeader)
     } else {
 		fmt.Println("Status Code:", resp.StatusCode, "is not a redirect.")
 	}

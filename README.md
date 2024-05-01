@@ -1,1 +1,1 @@
-O site https://distopia.savi2w.workers.dev/ foi configurado de tal forma que sempre responderá um status code HTTP 302 para outro site. Ele também inclui um header secreto chamado Distopia ANTES de performar o redirect. O seu objetivo é obter o valor desse header utilizando o Golang.
+O site https://distopia.savi2w.workers.dev/ foi configurado de tal forma que sempre responderá um status code HTTP 302 para outro site. Ele também inclui um header secreto chamado Distopia ANTES de performar o redirect. O objetivo do código é obter o valor desse header utilizando o Golang.
